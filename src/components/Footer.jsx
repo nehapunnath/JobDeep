@@ -11,7 +11,7 @@ function Footer() {
       {/* About Section */}
       <div>
         <h3 className="text-xl font-bold mb-4 text-orange-400 flex items-center">
-          <span className="mr-2">CareerNest</span>
+          <span className="mr-2">JobDeep</span>
         </h3>
         <p className="mb-4 text-blue-100">
           Your Gateway to Better Opportunities. Connecting talent with opportunity since 2023.
@@ -48,7 +48,7 @@ function Footer() {
           <li><a href="#" className="text-blue-100 hover:text-orange-300">Job Alerts</a></li>
           <li><a href="#" className="text-blue-100 hover:text-orange-300">Career Advice</a></li>
           <li><a href="#" className="text-blue-100 hover:text-orange-300">Resume Builder</a></li>
-          <li><a href="#" className="text-blue-100 hover:text-orange-300">Salary Calculator</a></li>
+          {/* <li><a href="#" className="text-blue-100 hover:text-orange-300">Salary Calculator</a></li> */}
         </ul>
       </div>
 
@@ -58,7 +58,7 @@ function Footer() {
         <ul className="space-y-2">
           <li><a href="#" className="text-blue-100 hover:text-orange-300">Post a Job</a></li>
           <li><a href="#" className="text-blue-100 hover:text-orange-300">Browse Candidates</a></li>
-          <li><a href="#" className="text-blue-100 hover:text-orange-300">Pricing Plans</a></li>
+          {/* <li><a href="#" className="text-blue-100 hover:text-orange-300">Pricing Plans</a></li> */}
           <li><a href="#" className="text-blue-100 hover:text-orange-300">Employer Resources</a></li>
           <li><a href="#" className="text-blue-100 hover:text-orange-300">Recruitment Solutions</a></li>
         </ul>

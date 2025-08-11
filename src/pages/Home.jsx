@@ -51,13 +51,16 @@ const HomePage = () => {
 
     // Featured categories
     const categories = [
-        { name: 'IT & Software', icon: '💻', jobs: 1243, trending: true },
-        { name: 'Sales & Marketing', icon: '📈', jobs: 876, trending: false },
-        { name: 'Education & Training', icon: '🎓', jobs: 342, trending: true },
-        { name: 'Healthcare', icon: '🏥', jobs: 765, trending: false },
-        { name: 'Finance & Accounting', icon: '💰', jobs: 543, trending: true },
-        { name: 'Skilled Trades', icon: '🔧', jobs: 231, trending: false }
-    ];
+    { name: 'Nursing', jobs: 892, trending: true },
+    { name: 'Teaching', icon: '👩‍🏫', jobs: 756, trending: true },
+    { name: 'Web Developer', icon: '👨‍💻', jobs: 1345, trending: true },
+    { name: 'IT & Software', icon: '💻', jobs: 1243, trending: true },
+    { name: 'Sales & Marketing', icon: '📈', jobs: 876, trending: false },
+    // { name: 'Education & Training', icon: '🎓', jobs: 342, trending: true },
+    { name: 'Healthcare', icon: '🏥', jobs: 765, trending: false },
+    { name: 'Finance & Accounting', icon: '💰', jobs: 543, trending: true },
+    // { name: 'Skilled Trades', icon: '🔧', jobs: 231, trending: false }
+];
 
     // Quick links
     const quickLinks = [
@@ -105,14 +108,14 @@ const HomePage = () => {
             id: 1,
             name: 'Priya Sharma',
             role: 'UX Designer at TechCorp',
-            content: 'CareerNest helped me find my dream job in just two weeks! The platform is so easy to use and the job recommendations were spot on.',
+            content: 'JobDeep helped me find my dream job in just two weeks! The platform is so easy to use and the job recommendations were spot on.',
             avatar: '👩'
         },
         {
             id: 2,
             name: 'Rahul Patel',
             role: 'Marketing Manager',
-            content: 'As an employer, I found the perfect candidate through CareerNest. The quality of applicants was much higher than other platforms.',
+            content: 'As an employer, I found the perfect candidate through JobDeep. The quality of applicants was much higher than other platforms.',
             avatar: '👨'
         }
     ];
@@ -130,7 +133,7 @@ const HomePage = () => {
                             Find Your Dream Job. <span className="text-orange-300">Build Your Future.</span>
                         </h1>
                         <p className="text-lg mb-8">
-                            CareerNest connects talented professionals with top employers. Whether you're starting your career or aiming higher, we've got the opportunities for you.
+                            JobDeep connects talented professionals with top employers. Whether you're starting your career or aiming higher, we've got the opportunities for you.
                         </p>
 
                         {/* Search Bar */}
@@ -157,7 +160,6 @@ const HomePage = () => {
                 </div>
             </section>
 
-            {/* Stats Section */}
            
             {/* Job Listings */}
             <section className="py-16 bg-gray-50">
@@ -230,38 +232,68 @@ const HomePage = () => {
             </section>
 
             {/* Featured Categories */}
-            <section className="py-16 bg-white">
+              <section className="py-16 bg-white">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                            Browse by <span className="text-blue-600">Category</span>
+                            Popular <span className="text-blue-600">Job Categories</span>
                         </h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Find opportunities in your field of expertise
+                            Explore opportunities in high-demand fields
                         </p>
                     </div>
 
-                    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+                    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                         {categories.map((category, index) => (
-                            <div key={index} className={`bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300 hover:-translate-y-1 border ${category.trending ? 'border-orange-200' : 'border-gray-100'}`}>
-                                <div className="p-6 text-center">
-                                    <div className="mx-auto bg-gradient-to-br from-blue-50 to-blue-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-5 group-hover:from-orange-50 group-hover:to-orange-100 transition-colors duration-300">
-                                        <span className="text-2xl">{category.icon}</span>
+                            <div 
+                                key={index} 
+                                className={`${category.bgColor} rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300 hover:-translate-y-1 border ${category.borderColor} relative`}
+                            >
+                                <div className="p-6">
+                                    <h3 className={`text-xl font-bold ${category.textColor} mb-3`}>
+                                        {category.name}
+                                    </h3>
+                                    <p className="text-gray-600 text-sm mb-4">
+                                        {category.jobs.toLocaleString()}+ open positions
+                                    </p>
+                                    {/* {category.trending && (
+                                        <span className="absolute top-4 right-4 bg-white px-2 py-1 rounded-full text-xs font-medium text-orange-600 shadow-sm">
+                                            Trending
+                                        </span>
+                                    )} */}
+                                    <div className="mt-4 pt-4 border-t border-white/30">
+                                        <a 
+                                            href="#" 
+                                            className={`inline-flex items-center text-sm font-medium ${category.textColor} hover:underline`}
+                                        >
+                                            View jobs
+                                            <svg 
+                                                className="w-4 h-4 ml-1" 
+                                                fill="none" 
+                                                stroke="currentColor" 
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path 
+                                                    strokeLinecap="round" 
+                                                    strokeLinejoin="round" 
+                                                    strokeWidth="2" 
+                                                    d="M9 5l7 7-7 7" 
+                                                />
+                                            </svg>
+                                        </a>
                                     </div>
-                                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition">{category.name}</h3>
-                                    <p className="text-sm text-gray-500">{category.jobs.toLocaleString()}+ jobs</p>
-                                   
-                                </div>
-                                <div className="px-6 pb-5 text-center">
-                                    <a href="#" className="inline-flex items-center text-sm text-blue-600 hover:text-blue-700 font-medium transition-colors">
-                                        Explore
-                                        <svg className="w-3.5 h-3.5 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-                                        </svg>
-                                    </a>
                                 </div>
                             </div>
                         ))}
+                    </div>
+
+                    <div className="text-center mt-12">
+                        <a 
+                            href="#" 
+                            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
+                        >
+                            Browse All Categories
+                        </a>
                     </div>
                 </div>
             </section>
@@ -290,23 +322,7 @@ const HomePage = () => {
             </section>
 
 
-            {/* CTA Section */}
-            {/* <section className="py-16 bg-gradient-to-r from-blue-800 to-blue-600 text-white">
-                <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-3xl font-bold mb-6">Ready to take the next step in your career?</h2>
-                    <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                        Join thousands of professionals who found their perfect career match with CareerNest
-                    </p>
-                    <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <button className="bg-white text-blue-800 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition duration-300 shadow-lg hover:shadow-xl">
-                            Browse Jobs
-                        </button>
-                        <button className="bg-transparent border-2 border-white hover:bg-white hover:bg-opacity-10 font-semibold py-3 px-8 rounded-lg transition duration-300">
-                            Create Profile
-                        </button>
-                    </div>
-                </div>
-            </section> */}
+          
 
              <section className="py-12 bg-white">
                 <div className="container mx-auto px-4">
